@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var grand = {
+        grandFather: "Pandu",
+        grandMother: "Kunti"
+    };
+    console.log(grand);
+
+    var parents = Object.create(grand);
+    console.log(parents.grandMother);
+    parents.father = "Arjun";
+    parents.mother = "Subhadra";
+    console.log(parents);
+
+    var son = Object.create(parents);
+    console.log(son.grandFather,son.mother);
+    son.name = "Abhimanyu";
+    console.log(son);
+</script>

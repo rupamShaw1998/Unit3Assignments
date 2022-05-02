@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+// splice() vs slice()    
+    // splice()
+    var arr = ["java","python","html","css"];
+    arr.splice(1,0,"js");
+    // inserting "js" at index 1 and replacing 0 elements
+    console.log(arr); 
+    // output: ['java', 'js', 'python', 'html', 'css']
+    // the original array is affected.
+    // The return value is an array containing the deleted element.
+    // hence it is mutable.
+
+    // slice()
+    var animals = ["elephant","tiger","buffalo","lion","bear"];
+    console.log(animals.slice(2,4)); 
+    // output: ['buffalo', 'lion']
+    // the original array is not affected.
+    // The return value is new array with the values in the selected sub-array of the given array. The values in the range start to (end-1) will be selected.
+    // hence it is immutable.
+/*-----------------------------------------------------------------*/
+
+// object.freeze() vs const
+    // object.freeze()
+    var obj = {
+    prop: 42
+    };
+
+    Object.freeze(obj); 
+    // freezes obj
+    obj.prop = 33;
+    // Throws an error in strict mode
+
+    console.log(obj.prop); // output: 42
+    //  freezing an object prevents new properties from being added to it,
+    // existing properties from being removed,
+    // prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed 
+
+    // const
+    const ob = {
+        name: "rs",
+        age: 23
+    };
+
+    ob.name = "RS";
+    ob.age = ob.age-1;
+
+    console.log(ob); // output: { name: "RS", age: 22 }
+    // The value of const can't be changed through reassignment (by using the assignment operator),
+    // and it can't be redeclared
+    // However, if a constant is an object or array its properties or items can be updated or removed.
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning App</title>
+    <style>
+        button {
+            margin: 2px 5px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var btns = ['Objects','Arrays','Function','String','Numbers','null','undefined'];
+    var ids = ['ob','arr','func','str','num','null','und'];
+    for(var i=0; i<btns.length; i++)
+    {
+        var button = document.createElement("button");
+        button.setAttribute("id",ids[i]);
+        button.textContent=btns[i];
+        document.querySelector("body").append(button);
+    }
+
+    var div = document.createElement("div");
+    // object
+    document.querySelector("#ob").addEventListener("click",infoObject);
+    function infoObject() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li> An object is a collection of properties, and a property is an association between a name (or key) and a value.</li><li>They just have their own way of doing things in JavaScript and you can control how they do them.</li><li>It is mutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+    // array
+    document.querySelector("#arr").addEventListener("click",infoArray);
+    function infoArray() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li> An array is a collection of elements of homogeneous data type.</li><li>They just have their own way of doing things in JavaScript and you can control how they do them.</li><li>It is mutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+    // function
+    document.querySelector("#func").addEventListener("click",infoFunction);
+    function infoFunction() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li>A JavaScript function is a block of code designed to perform a particular task.</li><li>A JavaScript function is executed when something invokes it (calls it).</li><li>It is immutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+    // string
+    document.querySelector("#str").addEventListener("click",infoString);
+    function infoString() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li> An string is a collection of characters i.e a word or a sentence.</li><li>They just have their own way of doing things in JavaScript.</li><li>It is immutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+    // numbers
+    document.querySelector("#num").addEventListener("click",infoNumbers);
+    function infoNumbers() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li>JavaScript has only one type of number. Numbers can be written with or without decimals.</li><li>They just have their own way of doing things in JavaScript.</li><li>It is immutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+    // null
+    document.querySelector("#null").addEventListener("click",infoNull);
+    function infoNull() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li>The value null represents the intentional absence of any object value.</li><li> It is one of JavaScript's primitive values and is treated as falsy for boolean operations.</li><li>It is immutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+    // undefined
+    document.querySelector("#und").addEventListener("click",infoUndefined);
+    function infoUndefined() {
+        div.innerHTML = "";
+        var uo = document.createElement("ul");
+        uo.innerHTML = "<li> A variable or an object has an undefined value when no value is assigned before using it.</li><li>Undefined is also a primitive value in JavaScript</li><li>It is immutable.</li>";
+        div.append(uo);
+        document.querySelector("body").append(div);
+    }
+</script>

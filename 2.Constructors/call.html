@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Calling</title>
+    <script src="https://kit.fontawesome.com/a40d53ad02.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var amar = {
+        name: "Amar",
+        place: "Goa",
+        skill1: "Singer",
+        singer: function() {
+            this.skill1 = "Singer";
+        }
+    };
+    var akbar = {
+        name: "Akbar",
+        place: "Mumbai",
+        skill2: "Chef",
+        chef: function() {
+            this.skill2 = "Chef";
+        }
+    };
+    var anthony = {
+        name: "Anthony",
+        place: "Kashmir",
+        skill3: "Magician",
+        magician: function() {
+            this.skill3 = "Magacian";
+        }
+    };
+
+    console.log(amar,akbar,anthony);
+    
+    amar.singer.call(akbar);
+    amar.singer.call(anthony);
+
+    akbar.chef.call(anthony);
+    akbar.chef.call(amar);
+
+    anthony.magician.call(amar);
+    anthony.magician.call(akbar);
+
+    console.log(amar,akbar,anthony);
+</script>

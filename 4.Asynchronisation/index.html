@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
+
+    <body>
+        <div>
+            <div id="nav">
+                <div>
+                    <div id="home">Home</div>
+                    <div id="log">Login</div>
+                    <div id="sign">Signup</div>
+                </div>
+            </div>
+            <div id="slideshow">
+                <img src="" alt="">
+
+            </div>
+
+            <div id="sort-buttons">
+
+                <!--Add sorting here-->
+                <select name="" onchange="sortMovies()" id="sort">
+                    <option value="">Sort by Rating</option>
+                    <option value="lh" id="sort-lh">Low to High</option>
+                    <option value="hl" id="sort-hl">High to Low</option>
+                </select>
+            </div>
+            <div id="movies">
+                <!--Show list of movies here-->
+            </div>
+        </div>
+    </body>
+
+</html>
+
+<script src="scripts/index.js"></script>
+<script src="scripts/database.js"></script>

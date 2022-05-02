@@ -1,0 +1,52 @@
+body {
+    font-family: sans-serif;
+}
+
+#nav {
+    border: 1px solid;
+    margin: 10px auto;
+    height: 40px;
+    width: 95%;
+}
+
+#nav>div {
+    display: flex;
+    float: right;
+    margin: 7px 20px 0 0;
+}
+
+#nav>div>div {
+    width: 80px;
+    height: 100%;
+    padding: 1% 5%;
+    font-weight: bold;
+}
+
+#nav>div>div:hover {
+    cursor: pointer;
+}
+
+form {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 1px 0 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+}
+
+h2 {
+    padding-bottom: 15px;
+}
+
+input {
+    height: 25px;
+}
+
+input:nth-of-type(5) {
+    width: 30%;
+    background-color: #008080;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+}

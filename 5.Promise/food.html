@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <style>
+        body {
+            background-image: url("https://res.klook.com/image/upload/q_80/blogen/2018/04/mcdonaldsaroundtheworldheader.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+        #container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        #container img {
+            width: 18%;
+        }
+    </style>
+</head>
+<body>
+    <div id="check">
+        <input type="checkbox" id="burger">Burger
+        <input type="checkbox" id="nuggets">Chicken Nuggets
+        <input type="checkbox" id="fries">French Fries
+        <input type="checkbox" id="coldDrinks">Cold Drinks
+        <input type="checkbox" id="cappuccino">Cappuccino
+        <button onclick="order();">Order Food</button>
+    </div>
+    <div>
+        <h2></h2>
+        <div id="container">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="food.js"></script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://kit.fontawesome.com/a40d53ad02.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        #current {
+            display: flex;
+        }
+        .mapouter {
+            position:relative;
+            text-align:right;
+            height:400px;
+            width:50%;
+            margin-left: 45px;
+        }
+        .gmap_canvas {
+            overflow:hidden;
+            background:none!important;
+            height:400px;
+            width:90%;
+        } 
+        #week {
+            color: rgb(255, 255, 255);
+            background-color: rgb(38, 33, 47);
+            margin: auto;
+            margin-top: 30px;
+            width: 80%;
+            height: 195px;
+            display: flex;
+            padding-left: 2%;
+            border-radius: 3px;
+        }
+        #week>div {
+            width: 14%;
+            height: 90%;
+            text-align: center;
+        }
+        #week img {
+            width: 90%;
+            height: 30%;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div id="current">
+        <div id="inputs">
+            <input type="text" id="city" placeholder="Enter city">
+            <button onclick="getWeatherData()">Search</button>
+            <div id="container"></div>
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="600" height="500" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">                
+                </iframe>
+                <a href="https://www.online-timer.net"></a><br>
+                <a href="https://www.embedgooglemap.net">embed google my maps</a>
+            </div>
+        </div>
+    </div>
+    <div id="week">
+
+    </div>
+</body>
+</html>
+
+<script src="scripts/index.js"></script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <style>
+        body {
+            background-image: url("https://wallpaperaccess.com/full/3658607.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        #inputs {
+            width: 200px;
+            margin: auto;
+        }
+        input {
+            height: 30px;
+            width: 200px;
+            border-radius: 11px;
+        }
+        button {
+            background-color: purple;
+            color: white;
+            width: 75px;
+            height: 25px;
+            border-radius: 7px;
+            margin-bottom: 20px;
+        }
+        #movies {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 10px;
+        }
+        #movies>div {
+            background-color: white;
+            width: 200px;
+        }
+        #movies>div>img {
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="inputs">
+        <input type="text"><br><br>
+        <button onclick="searchMovies()">Search</button>
+        <img src="" alt="">
+    </div>
+    <div id="movies"></div>
+</body>
+</html>
+
+<!-- 8ee4233 -->
+
+<script>
+let inputImg = document.querySelector("#inputs>img");
+
+async function searchMovies() {
+    try {
+        let movies = document.querySelector("input").value;
+        let res = await fetch(`https://www.omdbapi.com/?apikey=8ee4233&s=${movies}`);
+        let data = await res.json();
+        console.log(data.Search);
+        appendMovies(data.Search);
+    } catch(err) {
+        console.log("err:",err);
+        movies_div.innerHTML = null;
+        inputImg.src = "https://c.tenor.com/IHdlTRsmcS4AAAAM/404.gif";
+    }
+}
+
+let movies_div = document.getElementById("movies");
+function appendMovies(data) {
+    movies_div.innerHTML = null;
+    inputImg.src = null;
+    data.forEach(function (ele) {
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = ele.Poster;
+
+        let year = document.createElement("p");
+        year.innerText = ele.Year;
+
+        let h4 = document.createElement("h4");
+        h4.innerText = ele.Title;
+
+        let rating = Math.round(Math.random()*5)+5;
+        ele.IDBM = rating;
+        let idbm = document.createElement("p");
+        idbm.innerText = ele.IDBM;
+
+        let recom = document.createElement("h3");
+        recom.innerText = ""
+        if(rating>8.5)
+            recom.innerText = "Recommended";
+
+        div.append(img, h4, year, idbm, recom);
+        document.getElementById("movies").append(div);
+    });
+}
+    
+</script>

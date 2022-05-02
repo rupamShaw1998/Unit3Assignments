@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies: Trending</title>
+    <style>
+         body {
+            background-color: grey;
+        }
+        h1 {
+            color: brown;
+            text-align: center;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(2,45%);
+            grid-gap: 15px;
+            color: white;
+        }
+        #container>div {
+            border: 1px solid;
+            background-color: purple;
+        }
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trending Movies</h1>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    async function getData() {
+        try {
+            let res = await fetch("https://api.themoviedb.org/3/trending/all/day?api_key=fd759e07c9c8fb1586481eeebdd6f5ee");
+            let trend = await res.json();
+            
+            appendData(trend.results);
+        } catch(err) {
+            console.log(err);
+        }
+    }
+    getData(); 
+
+    function appendData(trend) {
+        console.log(trend);
+        trend.forEach(function (ele) {
+            let div = document.createElement("div");
+
+            let h4 = document.createElement("h4");
+            h4.innerText = ele.title;
+
+            let p = document.createElement("p");
+            p.innerText = ele.overview;
+
+            let h5 = document.createElement("h5");
+            h5.innerText = `Release Date: ${ele.release_date}`;
+
+            div.append(h4, p, h5);
+            document.getElementById("container").append(div);
+        })
+    }
+</script>

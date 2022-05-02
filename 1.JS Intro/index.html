@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Dice</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button>Throw Dice</button>
+</body>
+</html>
+
+<script>
+    var h1 = document.querySelector("h1");
+    document.querySelector("button").addEventListener("click",draw);
+    function draw() {
+        var r = Math.ceil(Math.random()*6);
+        if(r==6)
+            h1.style.color = "green";
+        else if(r==1)
+            h1.style.color = "yellow";
+        else
+            h1.style.color = "red";
+        h1.textContent = r;
+    }
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array Methods</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function myArray() {
+        Object.defineProperty(this,"length",{
+            writable: true,
+            enumerable: false
+        })
+        for(let i=0; i<arguments.length; i++)
+        {
+            this[i]=arguments[i];
+            this.length=arguments.length;
+        }
+    }
+
+    myArray.prototype.dhakelo = function(d) {
+        let index = this.length;        
+        this.length++;
+        this[index] = d;
+    }
+
+    myArray.prototype.ultaPulta = function() {
+        function swap(arr,i,j)
+        {
+            var temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+        var i=0, j=this.length-1;
+        while(i<j)
+        {
+            swap(this,i,j);
+            i++;
+            j--;
+        }
+    }
+
+    myArray.prototype.pehla = function() {
+        if(this.length==0)
+            return ("Array is Empty!");
+        return this[0];
+    }
+
+    let sq = new myArray(1,4,9,16);
+    console.log("sq:",Object.values(sq));
+    
+    sq.dhakelo(25);
+    console.log(Object.values(sq));
+
+    sq.ultaPulta();
+    console.log(Object.values(sq));
+
+    console.log(sq.pehla());
+
+</script>

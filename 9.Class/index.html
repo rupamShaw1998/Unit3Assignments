@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // class Cat {
+    //     constructor(n, w) {
+    //         this.name = n;
+    //         this.whiskers = w;
+    //     }
+    // }
+
+    // let c1 = new Cat("cat family", true);
+    // console.log("c1:",c1);
+
+    // class Tiger extends Cat {
+    //     constructor(n,w,b,c) {
+    //         super(n,w);
+    //         this.bite = b;
+    //         this.climb = c;
+    //     }
+    // }
+
+    // let t1 = new Tiger("cat family", true, 1050, false);
+    // console.log(t1)
+
+    class Stack {
+        constructor() {
+            this.length = 0;
+            this.stack = [];
+        }
+
+        push(v) {
+            this.stack.push(v);
+            this.length++;
+        }
+
+        pop() {
+            this.stack.pop();
+            this.length--;
+        }
+    }
+
+    let s1 = new Stack();
+    s1.push(4);
+    s1.push(9);
+    s1.push(16);
+    console.log(s1);
+    s1.pop();
+    console.log(s1);
+    
+</script>
